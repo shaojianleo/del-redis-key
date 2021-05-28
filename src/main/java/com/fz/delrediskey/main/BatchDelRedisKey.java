@@ -42,6 +42,7 @@ public class BatchDelRedisKey {
             return;
         }
         Object eval = jedis.eval(batchDel, Arrays.asList(pattern), Arrays.asList(""));
+        jedis.close();
         long t1 = System.currentTimeMillis();
         System.out.println("清理 ”" + pattern + " “" + eval.toString() + "个，耗时: " + ((t1-t0)/1000 + 1) + "秒");
     }
