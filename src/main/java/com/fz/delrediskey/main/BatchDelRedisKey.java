@@ -36,7 +36,7 @@ public class BatchDelRedisKey {
         }
         String batchDel = null;
         try {
-            batchDel = readLua("bathDel.lua");
+            batchDel = readLua("batchDel.lua");
         } catch (IOException e) {
             System.out.println("获取脚本文件失败");
             return;
